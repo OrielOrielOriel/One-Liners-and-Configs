@@ -1,0 +1,6 @@
+# find image files
+find . -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image'
+
+# strip file extensions
+for s in $(for x in $(ls *.c); do echo $x | cut -d '.' -f 1; done); do mv $s* $s; done
+
