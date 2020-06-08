@@ -7,3 +7,6 @@ for s in $(for x in $(ls *.c); do echo $x | cut -d '.' -f 1; done); do mv $s* $s
 # Password spray against smb
 for LINE in `cat userlist.txt`;do printf "Welcome123!" | smbclient -L //10.10.10.169/ -U $LINE;done
 
+# get your public IP
+dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'"' '{ print $2}'
+
