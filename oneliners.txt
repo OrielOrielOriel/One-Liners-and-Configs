@@ -9,6 +9,7 @@ for LINE in `cat userlist.txt`;do printf "Welcome123!" | smbclient -L //10.10.10
 
 # get your public IP
 dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'"' '{ print $2}'
+curl ipinfo.io/ip
 
 # get ASNs for a list of IPs
 for LINE in `cat ips.txt`; do whois -h v4.whois.cymru.com " -c -p $LINE" | cut -d ' ' -f 1 | grep -v AS; done
