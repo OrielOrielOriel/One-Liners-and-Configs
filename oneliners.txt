@@ -24,5 +24,8 @@ rg -i -e \(\?\:\[\a\-\z\0\-\9\!\#\$\%\&\'\*\+\/\=\?\^\_\`\{\|\}\~\-\]\+\(\?\:\\\
 # regex for ssn
 [0-9]{3}-[0-9]{2}-[0-9]{4}
 
+# regex for period followed by blankspace
+\.(?=\n|\t|\s)
+
 # oledump for vba from office docs
 for FILE in <PATH TO FILES>/*;do echo "$FILE" && python /opt/oledump0.0.5/oledump.py -s 7 -v "$FILE";done | grep -vP '(Warning|Error):' | tee -a <OUTPUT FILE>
