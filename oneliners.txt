@@ -29,3 +29,9 @@ rg -i -e \(\?\:\[\a\-\z\0\-\9\!\#\$\%\&\'\*\+\/\=\?\^\_\`\{\|\}\~\-\]\+\(\?\:\\\
 
 # oledump for vba from office docs
 for FILE in <PATH TO FILES>/*;do echo "$FILE" && python /opt/oledump0.0.5/oledump.py -s 7 -v "$FILE";done | grep -vP '(Warning|Error):' | tee -a <OUTPUT FILE>
+
+# excel unique values
+=SUMPRODUCT(--(FREQUENCY(MATCH(data,data,0),ROW(data)-ROW(data.firstcell)+1)>0))
+
+# excel unique values with a condition
+=SUM(--(FREQUENCY(IF(criteria,MATCH(vals,vals,0)),ROW(vals)-ROW(vals.first)+1)>0))
