@@ -38,3 +38,6 @@ for FILE in <PATH TO FILES>/*;do echo "$FILE" && python /opt/oledump0.0.5/oledum
 
 # tcpdump for things not destined for the local host
 tcpdump -i eth0 ether dst not MAC-ADDRESS and dst not LOCAL-IP and src not 10.30.90.129 -w - | tee FILE | tcpdump -
+
+# domain / url up to subdirectories 
+htt(p|ps)://[^/]*
