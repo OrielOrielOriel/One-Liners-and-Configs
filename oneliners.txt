@@ -43,4 +43,4 @@ tcpdump -i eth0 ether dst not MAC-ADDRESS and dst not LOCAL-IP and src not 10.30
 htt(p|ps)://[^/]*
 
 # grep file difference or line not in file
-for line in `cat output-parsed.txt`; do if ! grep -e $line ../../fqdns.txt; then echo $line >> difference.txt; fi; done
+for line in `cat output-parsed.txt`; do if ! grep -x -e $line ../../fqdns.txt; then echo $line >> difference.txt; fi; done
