@@ -50,3 +50,4 @@ for line in `cat output-parsed.txt`; do if ! grep -x -e $line ../../fqdns.txt; t
 
 # regex for string between two delimiters
 (?<=\t)(.*?)(?=\t)
+\(?\<=s:x\)\(x\)\(?=x\) #escaped for 
