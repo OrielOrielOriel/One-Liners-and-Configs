@@ -36,6 +36,9 @@ for FILE in <PATH TO FILES>/*;do echo "$FILE" && python /opt/oledump0.0.5/oledum
 # excel unique values with a condition
 =SUM(--(FREQUENCY(IF(criteria,MATCH(vals,vals,0)),ROW(vals)-ROW(vals.first)+1)>0))
 
+#excel email domain
+=IFERROR(LOWER(MID(A81,SEARCH("@",A81)+1,255)),"")
+
 #excel domain tld
 =SUBSTITUTE(TRIM(RIGHT(SUBSTITUTE(REPLACE(REPLACE(I2, 1, IFERROR(FIND("//", I2)+1, 0), TEXT(,))&"/", FIND("/", REPLACE(I2, 1, IFERROR(FIND("//", I2)+1, 0), TEXT(,))&"/"), LEN(I2), TEXT(,)), CHAR(46), REPT(CHAR(32), LEN(I2))), LEN(I2)*2)), CHAR(32), CHAR(46))
 
