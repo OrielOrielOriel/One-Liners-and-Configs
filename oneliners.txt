@@ -50,4 +50,7 @@ for line in `cat output-parsed.txt`; do if ! grep -x -e $line ../../fqdns.txt; t
 
 # regex for string between two delimiters
 (?<=\t)(.*?)(?=\t)
-\(?\<=s:x\)\(x\)\(?=x\) #escaped for 
+\(?\<=s:x\)\(x\)\(?=x\) #escaped for CLI
+
+#resolve ip and strip
+dig +short $x | grep '^[.0-9]*$'
