@@ -51,6 +51,9 @@ htt(p|ps)://[^/|^"|^:]*
 # grep file difference or line not in file
 for line in `cat output-parsed.txt`; do if ! grep -x -e $line ../../fqdns.txt; then echo $line >> difference.txt; fi; done
 
+#excel raw us phone to standard mask
+=TEXT(RIGHT(B2,10),"(000) 000-0000")
+
 # regex ip
 \b(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\b
 
