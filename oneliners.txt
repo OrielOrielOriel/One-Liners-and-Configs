@@ -63,3 +63,8 @@ for line in `cat output-parsed.txt`; do if ! grep -x -e $line ../../fqdns.txt; t
 
 #resolve ip and strip
 dig +short $x | grep '^[.0-9]*$'
+
+#asn sites
+https://v4.whois.cymru.com/
+https://search.arin.net/
+https://bgp.he.net/
