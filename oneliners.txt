@@ -68,3 +68,6 @@ dig +short $x | grep '^[.0-9]*$'
 https://v4.whois.cymru.com/
 https://search.arin.net/
 https://bgp.he.net/
+
+#wordlist based on json 
+jq -r '[paths|map(.|tostring)|join("/")]' test.json
